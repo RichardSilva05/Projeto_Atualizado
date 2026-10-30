@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galeria de Serviços - Sabino Gesso</title>
+  <meta name="description" content="Confira fotos dos trabalhos da Sabino Gesso: sancas, forros, molduras e divisórias em gesso.">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- CSS próprio -->
+  <link rel="stylesheet" href="../css/galeria.css">
+
+  <style>
+    body {
+      padding-top: 90px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="../index.html">
+        <img src="../img/logo.png" alt="Logo" class="logo">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+
+          <li class="nav-item ms-lg-3 display-4 menu">
+            <a class="nav-link text-black fs-4" href="../view/index.html">Inicio</a>
+          </li>
+
+          <li class="nav-item ms-lg-3 display-4 menu">
+            <a class="nav-link text-black fs-4" href="../view/index.html#sobrenos">Sobre Nós</a>
+          </li>
+
+          <li class="nav-item ms-lg-3 display-4 menu">
+            <a class="nav-link text-black fs-4" href="../view/index.html#parcerias">Parcerias</a>
+          </li>
+
+          <li class="nav-item ms-lg-3 display-4 menu">
+            <a class="nav-link text-black fs-4" href="#contatos">Contato</a>
+          </li>
+
+          <li class="nav-item dropdown ms-lg-3">
+            <a class="btn-orcamento dropdown-toggle" href="#" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              Fazer Orçamento
+            </a>
+          
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="../view/formulario_cpf.html">Sou pessoa Fisica CPF</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="./formulario_cnpj.html">Sou pessoa Juridica CNPJ</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ============ CABEÇALHO DA GALERIA ============ -->
+
+  <section class="container pt-5">
+    <h1 class="display-4 espaço text-center">Galeria de Serviços</h1>
+    <p class="display-4 fs-5 mt-3 text-center">
+      Confira alguns dos nossos trabalhos em sancas, forros, molduras e divisórias em gesso.
+    </p>
+
+    <!-- Filtros por categoria -->
+    <div class="filtros mt-4">
+      <button class="btn-filtro ativo" data-filtro="todos">Todos</button>
+      <button class="btn-filtro" data-filtro="sanca">Sancas</button>
+      <button class="btn-filtro" data-filtro="forro">Forros</button>
+      <button class="btn-filtro" data-filtro="moldura">Molduras</button>
+      <button class="btn-filtro" data-filtro="divisoria">Divisórias</button>
+    </div>
+  </section>
+
+  <!-- ============ GRADE DE FOTOS ============ -->
+  <section class="container pb-5 pt-4">
+    <div class="row g-4 galeria-grid">
+
+      <div class="col-6 col-md-4 col-lg-3 galeria-item" data-categoria="sanca">
+        <div class="galeria-card card-hover" data-bs-toggle="modal" data-bs-target="#modalFoto"
+             data-img="../img/predio3.jpg" data-titulo="Sanca de gesso">
+          <img src="../img/predio3.jpg" alt="Sanca de gesso" class="img-fluid galeria-img">
+          <div class="galeria-legenda">Sanca de gesso</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3 galeria-item" data-categoria="forro">
+        <div class="galeria-card card-hover" data-bs-toggle="modal" data-bs-target="#modalFoto"
+             data-img="../img/predio3.jpg" data-titulo="Forro rebaixado">
+          <img src="../img/predio3.jpg" alt="Forro rebaixado" class="img-fluid galeria-img">
+          <div class="galeria-legenda">Forro rebaixado</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3 galeria-item" data-categoria="moldura">
+        <div class="galeria-card card-hover" data-bs-toggle="modal" dat a-bs-target="#modalFoto"
+             data-img="../img/predio3.jpg" data-titulo="Moldura decorativa">
+          <img src="../img/predio3.jpg" alt="Moldura decorativa" class="img-fluid galeria-img">
+          <div class="galeria-legenda">Moldura decorativa</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3 galeria-item" data-categoria="divisoria">
+        <div class="galeria-card card-hover" data-bs-toggle="modal" data-bs-target="#modalFoto"
+             data-img="../img/predio3.jpg" data-titulo="Divisória em gesso">
+          <img src="../img/predio3.jpg" alt="Divisória em gesso" class="img-fluid galeria-img">
+          <div class="galeria-legenda">Divisória em gesso</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3 galeria-item" data-categoria="sanca">
+        <div class="galeria-card card-hover" data-bs-toggle="modal" data-bs-target="#modalFoto"
+             data-img="../img/predio3.jpg" data-titulo="Sanca com iluminação">
+          <img src="../img/predio3.jpg" alt="Sanca com iluminação" class="img-fluid galeria-img">
+          <div class="galeria-legenda">Sanca com iluminação</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3 galeria-item" data-categoria="forro">
+        <div class="galeria-card card-hover" data-bs-toggle="modal" data-bs-target="#modalFoto"
+             data-img="../img/predio3.jpg" data-titulo="Forro liso">
+          <img src="../img/predio3.jpg" alt="Forro liso" class="img-fluid galeria-img">
+          <div class="galeria-legenda">Forro liso</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3 galeria-item" data-categoria="moldura">
+        <div class="galeria-card card-hover" data-bs-toggle="modal" data-bs-target="#modalFoto"
+             data-img="../img/predio3.jpg" data-titulo="Roseta de teto">
+          <img src="../img/predio3.jpg" alt="Roseta de teto" class="img-fluid galeria-img">
+          <div class="galeria-legenda">Roseta de teto</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3 galeria-item" data-categoria="divisoria">
+        <div class="galeria-card card-hover" data-bs-toggle="modal" data-bs-target="#modalFoto"
+             data-img="../img/predio3.jpg" data-titulo="Divisória vazada">
+          <img src="../img/predio3.jpg" alt="Divisória vazada" class="img-fluid galeria-img">
+          <div class="galeria-legenda">Divisória vazada</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3 galeria-item" data-categoria="forro">
+        <div class="galeria-card card-hover" data-bs-toggle="modal" data-bs-target="#modalFoto"
+             data-img="../img/predio3.jpg" data-titulo="Forro com sanca invertida">
+          <img src="../img/predio3.jpg" alt="Forro com sanca invertida" class="img-fluid galeria-img">
+          <div class="galeria-legenda">Forro com sanca invertida</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ MODAL - FOTO AMPLIADA ============ -->
+  <div class="modal fade" id="modalFoto" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="modalFotoTitulo"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="" id="modalFotoImg" class="img-fluid rounded" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="text-center">
+    <p class="display-4 text-black fs-6">Sabino Gesso</p>
+    <small class="display-4 text-black fs-6">© 2026 - Todos os direitos reservados</small>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // ---- Filtro por categoria ----
+    const botoesFiltro = document.querySelectorAll('.btn-filtro');
+    const itensGaleria = document.querySelectorAll('.galeria-item');
+
+    botoesFiltro.forEach(botao => {
+      botao.addEventListener('click', () => {
+        botoesFiltro.forEach(b => b.classList.remove('ativo'));
+        botao.classList.add('ativo');
+
+        const filtro = botao.dataset.filtro;
+
+        itensGaleria.forEach(item => {
+          const mostrar = (filtro === 'todos' || item.dataset.categoria === filtro);
+          item.style.display = mostrar ? '' : 'none';
+        });
+      });
+    });
+
+    // ---- Modal com a foto ampliada ----
+    const modalFoto = document.getElementById('modalFoto');
+    modalFoto.addEventListener('show.bs.modal', (event) => {
+      const card = event.relatedTarget;
+      const img = card.getAttribute('data-img');
+      const titulo = card.getAttribute('data-titulo');
+
+      document.getElementById('modalFotoImg').src = img;
+      document.getElementById('modalFotoImg').alt = titulo;
+      document.getElementById('modalFotoTitulo').textContent = titulo;
+    });
+  </script>
+
+</body>
+</html>

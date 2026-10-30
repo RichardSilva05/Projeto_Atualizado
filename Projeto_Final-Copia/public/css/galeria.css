@@ -1,0 +1,213 @@
+/* =========================
+   BASE / RESET
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  padding: 8px 0;
+  background-color: rgb(255, 255, 255);
+}
+
+.navbar-nav .nav-link {
+  font-size: 14px;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  min-height: 100px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 60px;
+  padding: 0 15px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+  width: 92%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* =========================
+   TÍTULOS E TEXTO
+========================= */
+.espaço {
+  text-decoration: underline rgb(252, 96, 96);
+  text-decoration-thickness: 2px;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+.btn-orcamento {
+  background-color: rgb(255, 255, 255);
+  font-size: 16px;
+  text-decoration: underline red;
+  font-family: 'Verdana', sans-serif;
+  padding: 8px 16px;
+  border-radius: 24px;
+  cursor: pointer;
+  margin: 8px;
+}
+.btn-orcamento:hover {
+  background-color: #e47474;
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.menu {
+  text-decoration: underline;
+  text-decoration-color: red;
+  text-decoration-thickness: 1px;
+}
+
+/* =========================
+   GALERIA DE FOTOS
+========================= */
+
+/* Botões de filtro por categoria */
+.btn-filtro {
+  background-color: #fff;
+  border: 2px solid rgb(236, 78, 78);
+  color: rgb(236, 78, 78);
+  font-family: 'Verdana', sans-serif;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-filtro:hover,
+.btn-filtro.ativo {
+  background-color: rgb(236, 78, 78);
+  color: #fff;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Cartão de cada foto */
+.galeria-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #000;
+}
+
+.galeria-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.galeria-card:hover .galeria-img {
+  transform: scale(1.08);
+  opacity: 0.85;
+}
+
+/* Legenda sobre a foto */
+.galeria-legenda {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.galeria-card:hover .galeria-legenda {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .galeria-img {
+    height: 240px;
+  }
+}
+
+@media (min-width: 992px) {
+  .galeria-img {
+    height: 260px;
+  }
+}
+
+/* =========================================================
+   DESKTOP (≥992px)
+========================================================= */
+@media (min-width: 992px) {
+
+  .navbar {
+    padding: 0;
+  }
+
+  .navbar-nav .nav-item {
+    margin-right: 20px;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .logo {   
+    height: 100px;
+  }
+
+  .container {
+    min-height: 330px;
+    width: 90%;
+  }
+
+  .btn-orcamento {
+    font-size: 25px;
+    padding: 10px 20px;
+    border-radius: 28px;
+    margin: 0 25px;
+  }
+}

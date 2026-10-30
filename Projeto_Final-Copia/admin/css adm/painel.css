@@ -1,0 +1,527 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f3f3f3;
+  color: #000;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+ LAYOUT
+========================================================= */
+
+.layout {
+  display: flex;
+
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+ SIDEBAR
+========================================================= */
+
+.sidebar {
+  width: 220px;
+  min-width: 220px;
+  min-height: 100vh;
+
+  background-color: rgb(236, 78, 78);
+
+  padding: 40px 20px;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+ LOGO
+========================================================= */
+
+.sidebar-logo {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 55px;
+}
+
+.sidebar-logo img {
+  width: 130px;
+  height: auto;
+}
+
+
+/* =========================================================
+ MENU
+========================================================= */
+
+.sidebar nav ul {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 24px;
+}
+
+.sidebar nav ul li a {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 12px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition: opacity 0.2s ease;
+}
+
+.sidebar nav ul li a:hover {
+  opacity: 0.8;
+}
+
+.sidebar nav ul li a i {
+  font-size: 15px;
+}
+
+
+/* =========================================================
+ MENU ATIVO
+========================================================= */
+
+.sidebar nav ul li a.ativo {
+  background-color: #ffffff;
+
+  color: rgb(236, 78, 78);
+
+  border-radius: 8px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  font-weight: bold;
+}
+
+
+/* =========================================================
+ CONTEÚDO
+========================================================= */
+
+.content {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 28px 40px;
+
+  background-color: #f3f3f3;
+}
+
+
+/* =========================================================
+ CABEÇALHO
+========================================================= */
+
+.cabecalho {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.cabecalho h1 {
+  margin: 0;
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  color: #000;
+}
+
+
+/* =========================================================
+ CARDS DE RESUMO
+========================================================= */
+
+.cards-resumo {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+
+  margin-bottom: 40px;
+}
+
+
+/* =========================================================
+ CARD
+========================================================= */
+
+.card-resumo {
+  position: relative;
+
+  min-height: 115px;
+
+  background-color: #ffffff;
+
+  border-radius: 6px;
+
+  padding: 22px;
+
+  text-align: center;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+  overflow: hidden;
+}
+
+
+/* BARRA VERMELHA */
+
+.card-resumo::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 5px;
+
+  background-color: rgb(236, 78, 78);
+}
+
+
+/* TÍTULO */
+
+.card-resumo h2 {
+  margin: 0 0 10px;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  color: #000;
+}
+
+
+/* VALOR */
+
+.card-resumo p {
+  margin: 0;
+
+  font-size: 21px;
+
+  font-weight: bold;
+
+  color: rgb(236, 78, 78);
+}
+
+
+/* =========================================================
+ CARD DA TABELA
+========================================================= */
+
+.card-painel {
+  width: 100%;
+
+  background-color: #ffffff;
+
+  border-radius: 12px;
+
+  padding: 26px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card-painel h2 {
+  margin: 0 0 18px;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  color: #000;
+}
+
+
+/* =========================================================
+ TABELA
+========================================================= */
+
+.table-responsive {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+
+  border-collapse: separate;
+
+  border-spacing: 0;
+}
+
+
+/* =========================================================
+ CABEÇALHO
+========================================================= */
+
+thead {
+  background-color: rgb(236, 78, 78);
+}
+
+thead th {
+  padding: 14px;
+
+  background-color: rgb(236, 78, 78);
+
+  color: #ffffff;
+
+  text-align: left;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  border: none;
+}
+
+thead th:first-child {
+  border-top-left-radius: 8px;
+}
+
+thead th:last-child {
+  border-top-right-radius: 8px;
+}
+
+
+/* =========================================================
+ LINHAS
+========================================================= */
+
+tbody tr {
+  background-color: #ffffff;
+
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: #fafafa;
+}
+
+tbody td {
+  padding: 14px;
+
+  font-size: 14px;
+
+  color: #000000;
+
+  border-bottom: 1px solid #e5e5e5;
+
+  vertical-align: middle;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+ STATUS
+========================================================= */
+
+.status {
+  display: inline-block;
+
+  padding: 5px 13px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: bold;
+}
+
+.status-aguardando {
+  background-color: #fff0cf;
+
+  color: #b97800;
+}
+
+.status-aprovado {
+  background-color: #dff3e5;
+
+  color: #249653;
+}
+
+.status-recusado {
+  background-color: #f9dddd;
+
+  color: #e04444;
+}
+
+
+/* =========================================================
+ TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .sidebar {
+      width: 200px;
+      min-width: 200px;
+  }
+
+  .content {
+      padding: 28px 25px;
+  }
+
+  .cards-resumo {
+      gap: 18px;
+  }
+
+}
+
+
+/* =========================================================
+ MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .layout {
+      flex-direction: column;
+  }
+
+  .sidebar {
+      width: 100%;
+      min-width: 100%;
+
+      min-height: auto;
+
+      padding: 20px 15px;
+  }
+
+  .sidebar-logo {
+      margin-bottom: 25px;
+  }
+
+  .sidebar nav ul {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 8px;
+  }
+
+  .sidebar nav ul li {
+      margin-bottom: 0;
+  }
+
+  .sidebar nav ul li a {
+      padding: 8px 12px;
+  }
+
+  .content {
+      width: 100%;
+
+      padding: 25px 15px;
+  }
+
+  .cabecalho h1 {
+      font-size: 24px;
+  }
+
+  .cards-resumo {
+      grid-template-columns: 1fr;
+
+      gap: 15px;
+
+      margin-bottom: 25px;
+  }
+
+  .card-painel {
+      padding: 18px;
+  }
+
+  table {
+      min-width: 650px;
+  }
+
+}
+
+
+/* =========================================================
+ CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .sidebar nav ul {
+      flex-direction: column;
+  }
+
+  .sidebar nav ul li,
+  .sidebar nav ul li a {
+      width: 100%;
+  }
+
+  .sidebar nav ul li a {
+      justify-content: flex-start;
+  }
+
+  .content {
+      padding: 20px 12px;
+  }
+
+  .card-painel {
+      padding: 15px;
+  }
+
+}

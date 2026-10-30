@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Clientes - Painel - Sabino Gesso</title>
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css adm/clientes.css"
+    >
+
+    <script src="../js adm/sair.js"></script>
+
+</head>
+
+
+<body>
+
+
+    <div class="layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <img
+                    src="../img adm/logo.png"
+                    alt="Logo Sabino Gesso"
+                >
+
+            </div>
+
+
+            <nav>
+
+                <ul>
+
+
+                    <li>
+
+                        <a href="orcamentos.html">
+
+                            <i class="bi bi-receipt"></i>
+
+                            <span>
+                                Orçamentos
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a
+                            href="clientes.html"
+                            class="ativo"
+                        >
+
+                            <i class="bi bi-people"></i>
+
+                            <span>
+                                Clientes
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="relatorios.html">
+
+                            <i class="bi bi-bar-chart-line"></i>
+
+                            <span>
+                                Relatórios
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="projetos.html">
+
+                            <i class="bi bi-kanban"></i>
+
+                            <span>
+                                Projetos
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="configuracoes.html">
+
+                            <i class="bi bi-gear"></i>
+
+                            <span>
+                                Configurações
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-sair">
+
+                        <a
+                            href="login.html"
+                            onclick="return confirmarSaida()"
+                        >
+
+                            <i class="bi bi-box-arrow-right"></i>
+
+                            <span>
+                                Sair
+                            </span>
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             CONTEÚDO
+        ================================================== -->
+
+        <main class="content">
+
+
+            <!-- =================================================
+                 CABEÇALHO
+            ================================================== -->
+
+            <div class="cabecalho">
+
+                <h1>
+                    Clientes
+                </h1>
+
+
+                <a
+                    href="novo-cliente.html"
+                    class="btn-adicionar-cliente"
+                    id="btnAdicionarCliente"
+                >
+
+                    <i class="bi bi-person-plus"></i>
+
+                    Adicionar Cliente
+
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 BUSCA
+            ================================================== -->
+
+            <div class="barra-pesquisa">
+
+                <i class="bi bi-search"></i>
+
+                <input
+                    type="text"
+                    id="buscarCliente"
+                    placeholder="Buscar por nome, código, CPF ou CNPJ..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CLIENTES
+            ================================================== -->
+
+            <section
+                class="clientes-grid"
+                id="clientesGrid"
+            >
+
+                <!--
+                    Os clientes serão carregados
+                    diretamente da API.
+                -->
+
+                <div class="carregando-clientes">
+
+                    <i class="bi bi-arrow-repeat"></i>
+
+                    <span>
+                        Carregando clientes...
+                    </span>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="../js adm/clientes.js"></script>
+
+
+</body>
+
+</html>

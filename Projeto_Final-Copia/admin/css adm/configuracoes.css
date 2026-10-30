@@ -1,0 +1,553 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #f3f3f3;
+
+    color: #000;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.layout {
+    display: flex;
+
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    width: 220px;
+    min-width: 220px;
+    min-height: 100vh;
+
+    background-color: rgb(236, 78, 78);
+
+    padding: 40px 20px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.sidebar-logo {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 55px;
+}
+
+.sidebar-logo img {
+    display: block;
+
+    width: 130px;
+    height: auto;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.sidebar nav ul {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 24px;
+}
+
+.sidebar nav ul li a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 12px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition:
+        opacity 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.sidebar nav ul li a:hover {
+    opacity: 0.8;
+}
+
+.sidebar nav ul li a i {
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   MENU ATIVO
+========================================================= */
+
+.sidebar nav ul li a.ativo {
+    background-color: #ffffff;
+
+    color: rgb(236, 78, 78);
+
+    border-radius: 8px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.content {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 28px 40px;
+
+    background-color: #f3f3f3;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.cabecalho {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+}
+
+.cabecalho h1 {
+    margin: 0;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: #000;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card-configuracao {
+    width: 100%;
+
+    margin-bottom: 12px;
+
+    padding: 16px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e6e6e6;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card-configuracao h2 {
+    margin: 0 0 18px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #333333;
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.campo {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    flex: 1;
+}
+
+.campo label {
+    color: #444444;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.campo input {
+    width: 100%;
+
+    height: 34px;
+
+    padding: 7px 10px;
+
+    border: 1px solid #dcdfe3;
+
+    border-radius: 4px;
+
+    background-color: #ffffff;
+
+    color: #444444;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 12px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.campo input:focus {
+    border-color: rgb(236, 78, 78);
+
+    box-shadow:
+        0 0 0 2px rgba(236, 78, 78, 0.1);
+}
+
+.campo input::placeholder {
+    color: #999999;
+}
+
+
+/* =========================================================
+   PERFIL
+========================================================= */
+
+.campos-perfil {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+
+    gap: 14px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   SENHA
+========================================================= */
+
+.campos-senha {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 14px;
+
+    max-width: 100%;
+    
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.btn-principal {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 34px;
+
+    padding: 8px 15px;
+
+    border: none;
+
+    border-radius: 4px;
+
+    background-color: rgb(236, 78, 78);
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+.btn-principal:hover {
+    background-color: #db4d4d;
+}
+
+.btn-principal:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   NOTIFICAÇÕES
+========================================================= */
+
+.notificacoes {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 30px;
+}
+
+.opcao-notificacao {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    color: #555555;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.opcao-notificacao input {
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SWITCH
+========================================================= */
+
+.switch {
+    position: relative;
+
+    display: block;
+
+    width: 31px;
+    height: 17px;
+
+    flex-shrink: 0;
+
+    border-radius: 20px;
+
+    background-color: #d4d4d4;
+
+    transition: background-color 0.2s ease;
+}
+
+.switch::after {
+    content: "";
+
+    position: absolute;
+
+    top: 2px;
+    left: 2px;
+
+    width: 13px;
+    height: 13px;
+
+    border-radius: 50%;
+
+    background-color: #ffffff;
+
+    transition: transform 0.2s ease;
+}
+
+.opcao-notificacao input:checked + .switch {
+    background-color: rgb(200, 78, 83);
+}
+
+.opcao-notificacao input:checked + .switch::after {
+    transform: translateX(14px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .sidebar {
+        width: 200px;
+        min-width: 200px;
+    }
+
+    .content {
+        padding: 28px 25px;
+    }
+
+    .campos-perfil {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+
+        min-height: auto;
+
+        padding: 20px 15px;
+    }
+
+    .sidebar-logo {
+        margin-bottom: 25px;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 8px;
+    }
+
+    .sidebar nav ul li {
+        margin-bottom: 0;
+    }
+
+    .sidebar nav ul li a {
+        padding: 8px 12px;
+    }
+
+    .content {
+        width: 100%;
+
+        padding: 25px 15px;
+    }
+
+    .cabecalho h1 {
+        font-size: 24px;
+    }
+
+    .campos-perfil,
+    .campos-senha,
+    .notificacoes {
+        grid-template-columns: 1fr;
+    }
+
+    .opcao-notificacao {
+        min-height: 35px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .sidebar nav ul {
+        flex-direction: column;
+    }
+
+    .sidebar nav ul li,
+    .sidebar nav ul li a {
+        width: 100%;
+    }
+
+    .sidebar nav ul li a {
+        justify-content: flex-start;
+    }
+
+    .content {
+        padding: 20px 12px;
+    }
+
+    .card-configuracao {
+        padding: 14px;
+    }
+
+}

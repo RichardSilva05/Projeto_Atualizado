@@ -1,0 +1,605 @@
+
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Orçamento CNPJ - Sabino Gesso</title>
+
+    <!-- BOOTSTRAP -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- BOOTSTRAP ICONS -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    >
+
+    <!-- CSS DO FORMULÁRIO -->
+    <link rel="stylesheet" href="../css/view_forms.css">
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+
+            <div class="logo-formulario">
+                <img src="../img/logo.png" alt="Sabino Gesso">
+            </div>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Abrir menu"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item ms-lg-3 menu">
+                        <a class="nav-link text-black fs-4" href="index.html">
+                            Início
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3 menu">
+                        <a
+                            class="nav-link text-black fs-4"
+                            href="#"
+                            id="btnGerarPDF"
+                            title="Gerar PDF"
+                            aria-label="Gerar PDF"
+                        >
+                            <i class="bi bi-file-earmark-arrow-down"></i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- FORMULÁRIO -->
+    <main class="form-orcamento">
+
+        <div class="logo-formulario">
+            <img src="../img/logo.png" alt="Sabino Gesso">
+        </div>
+
+        <h1>Orçamento para CNPJ</h1>
+        <div class="subtitulo">Pessoa Jurídica</div>
+
+        <form id="formOrcamentoPJ">
+
+            <!-- DADOS DA EMPRESA -->
+            <h2>
+                <i class="bi bi-building"></i>
+                Dados da empresa:
+            </h2>
+
+            <label for="razaoSocial" class="visually-hidden">
+                Razão social
+            </label>
+            <input
+                id="razaoSocial"
+                name="razaoSocial"
+                type="text"
+                class="form-control"
+                placeholder="Razão social"
+                maxlength="150"
+                autocomplete="organization"
+                required
+            >
+
+            <label for="nomeFantasia" class="visually-hidden">
+                Nome fantasia
+            </label>
+            <input
+                id="nomeFantasia"
+                name="nomeFantasia"
+                type="text"
+                class="form-control"
+                placeholder="Nome fantasia (opcional)"
+                maxlength="150"
+            >
+
+            <label for="cnpj" class="visually-hidden">CNPJ</label>
+            <input
+                id="cnpj"
+                name="cnpj"
+                type="text"
+                class="form-control"
+                placeholder="CNPJ"
+                maxlength="18"
+                inputmode="numeric"
+                required
+            >
+
+            <label for="inscricaoEstadual" class="visually-hidden">
+                Inscrição estadual
+            </label>
+            <input
+                id="inscricaoEstadual"
+                name="inscricaoEstadual"
+                type="text"
+                class="form-control"
+                placeholder="Inscrição estadual (opcional)"
+                maxlength="30"
+            >
+
+
+            <!-- DADOS DO RESPONSÁVEL -->
+            <h2>
+                <i class="bi bi-person-fill"></i>
+                Dados do responsável:
+            </h2>
+
+            <label for="responsavel" class="visually-hidden">
+                Nome do responsável
+            </label>
+            <input
+                id="responsavel"
+                name="responsavel"
+                type="text"
+                class="form-control"
+                placeholder="Nome completo do responsável"
+                autocomplete="name"
+                maxlength="150"
+                required
+            >
+
+            <label for="email" class="visually-hidden">E-mail</label>
+            <input
+                id="email"
+                name="email"
+                type="email"
+                class="form-control"
+                placeholder="Digite seu e-mail"
+                autocomplete="email"
+                maxlength="150"
+                required
+            >
+
+            <label for="telefone" class="visually-hidden">
+                Telefone
+            </label>
+            <input
+                id="telefone"
+                name="telefone"
+                type="tel"
+                class="form-control"
+                placeholder="(00) 00000-0000"
+                maxlength="15"
+                inputmode="numeric"
+                autocomplete="tel"
+                required
+            >
+
+
+            <!-- SERVIÇOS -->
+            <h2>
+                <i class="bi bi-tools"></i>
+                Sobre o serviço:
+            </h2>
+
+            <span class="rotulo-pequeno">Tipo de serviço</span>
+
+            <div class="d-flex flex-wrap mb-2">
+
+                <div class="form-check-pill">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="servicoSanca"
+                        name="servicos"
+                        value="Sanca"
+                    >
+                    <label for="servicoSanca">Sanca</label>
+                </div>
+
+                <div class="form-check-pill">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="servicoForro"
+                        name="servicos"
+                        value="Forro rebaixado"
+                    >
+                    <label for="servicoForro">Forro rebaixado</label>
+                </div>
+
+                <div class="form-check-pill">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="servicoMoldura"
+                        name="servicos"
+                        value="Moldura decorativa"
+                    >
+                    <label for="servicoMoldura">Moldura decorativa</label>
+                </div>
+
+                <div class="form-check-pill">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="servicoDivisoria"
+                        name="servicos"
+                        value="Divisória"
+                    >
+                    <label for="servicoDivisoria">Divisória</label>
+                </div>
+
+            </div>
+
+
+            <!-- OUTRO SERVIÇO -->
+            <div class="d-flex align-items-center mb-3">
+
+                <div class="form-check-pill mb-0">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="servicoOutro"
+                        name="servicos"
+                        value="Outro"
+                    >
+                    <label for="servicoOutro">Outro:</label>
+                </div>
+
+                <label for="servicoOutroTexto" class="visually-hidden">
+                    Descreva o outro serviço
+                </label>
+
+                <input
+                    id="servicoOutroTexto"
+                    name="servicoOutroTexto"
+                    type="text"
+                    class="form-control campo-outro"
+                    placeholder="Descreva o serviço"
+                    maxlength="150"
+                    disabled
+                >
+            </div>
+
+
+            <!-- METRAGENS INDIVIDUAIS -->
+            <span class="rotulo-pequeno">
+                Metragem de cada serviço
+            </span>
+
+            <p class="text-muted small">
+                Marque os serviços desejados e informe a metragem de cada um.
+            </p>
+
+            <!-- O JavaScript adicionará aqui os campos de metragem -->
+            <div id="camposMetragemServicos"></div>
+
+            <!-- METRAGEM TOTAL -->
+            <div class="mb-3">
+                <label for="area" class="visually-hidden">
+                    Área total dos serviços em metros quadrados
+                </label>
+
+                <input
+                    id="area"
+                    name="area"
+                    type="number"
+                    class="form-control"
+                    placeholder="Área total (m²)"
+                    min="0"
+                    step="0.01"
+                    value="0"
+                    readonly
+                >
+            </div>
+
+
+            <!-- PRAZO -->
+            <span class="rotulo-pequeno">Prazo desejado</span>
+
+            <div class="d-flex flex-wrap mb-3">
+
+                <div class="form-check-pill">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="prazo"
+                        id="prazoUrgente"
+                        value="Urgente"
+                        required
+                    >
+                    <label for="prazoUrgente">Urgente</label>
+                </div>
+
+                <div class="form-check-pill">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="prazo"
+                        id="prazo30dias"
+                        value="Até 30 dias"
+                    >
+                    <label for="prazo30dias">Até 30 dias</label>
+                </div>
+
+                <div class="form-check-pill">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="prazo"
+                        id="prazoSemPressa"
+                        value="Sem pressa"
+                    >
+                    <label for="prazoSemPressa">Sem pressa</label>
+                </div>
+
+            </div>
+
+
+            <!-- RESUMO DOS VALORES -->
+            <div
+                id="resumoValor"
+                class="border rounded p-3 mb-3"
+                aria-live="polite"
+            >
+                <strong class="d-block mb-2">Valor estimado</strong>
+
+                <p class="mb-0 text-muted">
+                    Selecione os serviços e informe a metragem de cada um
+                    para visualizar os subtotais e o valor estimado.
+                </p>
+            </div>
+
+
+            <!-- ENDEREÇO -->
+            <h2>
+                <i class="bi bi-house-check-fill"></i>
+                Endereço da obra:
+            </h2>
+
+            <!-- CEP / ESTADO -->
+            <div class="row-endereco">
+
+                <div>
+                    <label for="cep" class="visually-hidden">CEP</label>
+                    <input
+                        id="cep"
+                        name="cep"
+                        type="text"
+                        class="form-control"
+                        placeholder="CEP"
+                        maxlength="9"
+                        inputmode="numeric"
+                        autocomplete="postal-code"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="estado" class="visually-hidden">
+                        Estado
+                    </label>
+                    <select
+                        id="estado"
+                        name="estado"
+                        class="form-control"
+                        required
+                    >
+                        <option value="">Carregando estados...</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <small
+                id="cepStatus"
+                class="d-block mb-2"
+                aria-live="polite"
+            ></small>
+
+
+            <!-- CIDADE / BAIRRO -->
+            <div class="row-endereco">
+
+                <div>
+                    <label for="cidade" class="visually-hidden">
+                        Cidade
+                    </label>
+                    <select
+                        id="cidade"
+                        name="cidade"
+                        class="form-control"
+                        required
+                        disabled
+                    >
+                        <option value="">Selecione a cidade</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="bairro" class="visually-hidden">
+                        Bairro
+                    </label>
+                    <input
+                        id="bairro"
+                        name="bairro"
+                        type="text"
+                        class="form-control"
+                        placeholder="Bairro"
+                        autocomplete="address-level3"
+                        maxlength="100"
+                        required
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- LOGRADOURO / NÚMERO -->
+            <div class="row-endereco">
+
+                <div>
+                    <label for="logradouro" class="visually-hidden">
+                        Logradouro
+                    </label>
+                    <input
+                        id="logradouro"
+                        name="logradouro"
+                        type="text"
+                        class="form-control"
+                        placeholder="Logradouro"
+                        autocomplete="address-line1"
+                        maxlength="150"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="numero" class="visually-hidden">
+                        Número
+                    </label>
+                    <input
+                        id="numero"
+                        name="numero"
+                        type="text"
+                        class="form-control"
+                        placeholder="Número"
+                        maxlength="20"
+                        required
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- COMPLEMENTO -->
+            <label for="complemento" class="visually-hidden">
+                Complemento
+            </label>
+            <input
+                id="complemento"
+                name="complemento"
+                type="text"
+                class="form-control"
+                placeholder="Complemento (sala, bloco, referência)"
+                maxlength="150"
+            >
+
+
+            <!-- OBSERVAÇÕES -->
+            <label for="observacoes" class="visually-hidden">
+                Observações
+            </label>
+            <textarea
+                id="observacoes"
+                name="observacoes"
+                class="form-control"
+                rows="4"
+                maxlength="2000"
+                placeholder="Observações sobre o serviço (opcional)"
+            ></textarea>
+
+
+            <!-- VISITA TÉCNICA -->
+            <h2>
+                <i class="bi bi-geo-alt-fill"></i>
+                Visita no local:
+            </h2>
+
+            <span class="rotulo-pequeno">
+                Deseja que façamos uma visita técnica no local?
+            </span>
+
+            <div class="d-flex flex-wrap mb-3" id="blocoVisita">
+
+                <div class="form-check-pill">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="visita"
+                        id="visitaSim"
+                        value="Sim"
+                        required
+                    >
+                    <label for="visitaSim">Sim, quero a visita</label>
+                </div>
+
+                <div class="form-check-pill">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="visita"
+                        id="visitaNao"
+                        value="Não"
+                    >
+                    <label for="visitaNao">Não preciso</label>
+                </div>
+
+            </div>
+
+
+            <!-- BOTÕES -->
+            <div class="botoes-acoes">
+
+                <button
+                    type="submit"
+                    class="btn-enviar"
+                    id="btnEnviar"
+                >
+                    Enviar
+                </button>
+
+                <button
+                    type="button"
+                    id="btnWhatsApp"
+                    class="btn-enviar btn-whatsapp"
+                >
+                    <i class="bi bi-whatsapp"></i>
+                    Chamar no WhatsApp
+                </button>
+
+            </div>
+
+        </form>
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="text-center">
+        <p class="text-black fs-6">Sabino Gesso</p>
+
+        <small class="text-black fs-6">
+            © 2026 - Todos os direitos reservados
+        </small>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- CÁLCULO DOS SERVIÇOS E METRAGENS -->
+    <script src="../js/preco_orcamentos.js"></script>
+
+    <!-- GERAÇÃO DO PDF E ENVIO -->
+    <script src="../js/gerar_pdf_cnpj.js"></script>
+
+</body>
+</html>

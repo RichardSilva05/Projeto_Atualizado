@@ -1,0 +1,22 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;min-height:100%}
+body{font-family:Arial,Helvetica,sans-serif;background:#f3f3f3;color:#000}
+.detalhes-orcamento-main{width:100%;max-width:1200px;min-height:100vh;margin:0 auto;padding:28px 40px}
+.detalhes-topo{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+.detalhes-topo h1{margin:0 0 7px;font-size:28px;font-weight:700;color:#000}
+.detalhes-topo p{color:#777;font-size:13px}
+.btn-voltar{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;border:1px solid #ddd;border-radius:5px;background:#fff;color:#333;text-decoration:none;font-size:13px;transition:.2s}
+.btn-voltar:hover{background:#fafafa;border-color:rgb(236,78,78)}
+.bloco-detalhes{margin-bottom:20px;padding:20px;border-radius:4px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.bloco-detalhes>h2,.orcamento-topo h2{margin:0 0 18px;padding-bottom:12px;border-bottom:1px solid #eee;color:#202020;font-size:18px;font-weight:700}
+.orcamento-topo{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.orcamento-topo h2{margin:0 0 16px}
+.dados-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 20px}
+.campo-detalhe{min-width:0}.campo-detalhe small{display:block;margin-bottom:5px;color:#777;font-size:11px}.campo-detalhe strong{display:block;overflow-wrap:anywhere;white-space:pre-line;color:#202020;font-size:13px;line-height:1.5;font-weight:600}
+.tag-status{display:inline-flex;align-items:center;padding:5px 10px;border:1px solid #e3e3e3;border-radius:20px;background:#f3f3f3;color:#555;font-size:11px;font-weight:700}
+.tag-status.status-aguardando{border-color:#f0d8a8;background:#fff7e6;color:#8a5b00}.tag-status.status-aprovado,.tag-status.status-concluido{border-color:#b9dfc5;background:#edf8f0;color:#27723d}.tag-status.status-cancelado,.tag-status.status-recusado{border-color:#f1c2c2;background:#fff0f0;color:#b42323}.tag-status.status-analise{border-color:#c9d9ee;background:#f0f6ff;color:#315b89}
+.texto-longo{white-space:pre-wrap;overflow-wrap:anywhere;padding:12px;border-radius:4px;background:#f8f8f8;color:#444;font-size:13px;line-height:1.6}
+.estado-carregamento,.estado-erro{padding:24px;color:#777;text-align:center;font-size:14px}.estado-erro{color:#b42323}
+@media(max-width:991px){.detalhes-orcamento-main{padding:28px 25px}.dados-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:767px){.detalhes-orcamento-main{padding:25px 15px}.detalhes-topo{align-items:stretch;flex-direction:column;gap:14px}.detalhes-topo h1{font-size:24px}.btn-voltar{align-self:flex-start}.bloco-detalhes{padding:16px}}
+@media(max-width:480px){.detalhes-orcamento-main{padding:20px 12px}.dados-grid{grid-template-columns:1fr;gap:12px}.bloco-detalhes>h2,.orcamento-topo h2{font-size:16px}}

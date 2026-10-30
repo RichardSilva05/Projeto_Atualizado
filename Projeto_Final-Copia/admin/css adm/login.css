@@ -1,0 +1,157 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* =========================================================
+   FUNDO
+========================================================= */
+
+body {
+    font-family: Verdana, sans-serif;
+    background: linear-gradient(135deg, rgb(236, 78, 78), #1e1e2f);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+/* =========================================================
+   CARD DE LOGIN
+========================================================= */
+
+.login-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.login-card:hover {
+    border-color: rgb(240, 111, 111);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.login-logo {
+    width: 140px;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+h1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(14, 9, 9);
+    margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.campo {
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: rgb(108, 108, 108);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 6px;
+}
+
+input {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #d9d9d9;
+    color: rgb(14, 9, 9);
+    font-size: 0.95rem;
+    font-family: Verdana, sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: rgb(236, 78, 78);
+    outline: none;
+    box-shadow: 0 0 0 0.15rem rgba(236, 78, 78, 0.15);
+}
+
+
+/* =========================================================
+   BOTÃO ENTRAR
+========================================================= */
+
+.btn-entrar {
+    display: block;
+    width: 100%;
+    background-color: rgb(236, 78, 78);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    letter-spacing: 0.4px;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-entrar:hover {
+    background-color: rgb(209, 141, 141);
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .login-card {
+        padding: 30px 20px;
+    }
+
+    .login-logo {
+        width: 110px;
+    }
+}

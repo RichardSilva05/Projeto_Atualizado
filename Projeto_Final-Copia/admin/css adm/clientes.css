@@ -1,0 +1,691 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #f3f3f3;
+
+    color: #000;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.layout {
+    display: flex;
+
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    width: 220px;
+    min-width: 220px;
+    min-height: 100vh;
+
+    background-color: rgb(236, 78, 78);
+
+    padding: 40px 20px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.sidebar-logo {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 55px;
+}
+
+.sidebar-logo img {
+    width: 130px;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.sidebar nav ul {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 24px;
+}
+
+.sidebar nav ul li a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 12px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: opacity 0.2s ease;
+}
+
+.sidebar nav ul li a:hover {
+    opacity: 0.8;
+}
+
+.sidebar nav ul li a i {
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   MENU ATIVO
+========================================================= */
+
+.sidebar nav ul li a.ativo {
+    background-color: #ffffff;
+
+    color: rgb(236, 78, 78);
+
+    border-radius: 8px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.content {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 28px 40px;
+
+    background-color: #f3f3f3;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.cabecalho {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+}
+
+.cabecalho h1 {
+    margin: 0;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: #000;
+}
+
+
+/* =========================================================
+   BOTÃO ADICIONAR CLIENTE
+========================================================= */
+
+.btn-adicionar-cliente {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 11px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: rgb(236, 78, 78);
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.btn-adicionar-cliente:hover {
+    background-color: #db4d4d;
+}
+
+.btn-adicionar-cliente i {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   BARRA DE PESQUISA
+========================================================= */
+
+.barra-pesquisa {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    height: 42px;
+
+    margin-bottom: 22px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 4px;
+}
+
+.barra-pesquisa i {
+    margin-left: 13px;
+
+    color: #999999;
+
+    font-size: 14px;
+}
+
+.barra-pesquisa input {
+    flex: 1;
+
+    width: 100%;
+
+    height: 100%;
+
+    padding: 0 12px;
+
+    border: none;
+
+    outline: none;
+
+    background-color: transparent;
+
+    color: #000;
+
+    font-size: 13px;
+}
+
+.barra-pesquisa input::placeholder {
+    color: #999999;
+}
+
+
+/* =========================================================
+   GRID DE CLIENTES
+========================================================= */
+
+.clientes-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   CARD DO CLIENTE
+========================================================= */
+
+.card-cliente {
+    background-color: #ffffff;
+
+    border-radius: 4px;
+
+    padding: 14px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.card-cliente:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================================
+   TOPO DO CLIENTE
+========================================================= */
+
+.cliente-topo {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   AVATAR
+========================================================= */
+
+.cliente-avatar {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+.avatar-vermelho {
+    background-color: #d93030;
+}
+
+.avatar-azul {
+    background-color: #68a6df;
+}
+
+.avatar-cinza {
+    background-color: #9ca3af;
+}
+
+.avatar-laranja {
+    background-color: #ed934d;
+}
+
+.avatar-verde {
+    background-color: #5ab28d;
+}
+
+.avatar-roxo {
+    background-color: #9450a2;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+========================================================= */
+
+.cliente-info {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.cliente-info h2 {
+    margin: 0 0 5px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #202020;
+}
+
+.cliente-info p {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin: 0 0 4px;
+
+    color: #777777;
+
+    font-size: 10px;
+}
+
+.cliente-info p i {
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   MENU DO CLIENTE
+========================================================= */
+
+.btn-menu-cliente {
+    border: none;
+
+    background: transparent;
+
+    color: #888888;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   PROJETOS RECENTES
+========================================================= */
+
+.projetos-recentes {
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    margin-top: 12px;
+
+    font-size: 10px;
+}
+
+.projetos-recentes strong {
+    color: #333333;
+}
+
+.projetos-recentes span {
+    color: #999999;
+}
+
+
+/* =========================================================
+   PROJETO
+========================================================= */
+
+.projeto {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 8px;
+
+    color: #555555;
+
+    font-size: 10px;
+}
+
+.projeto i {
+    color: rgb(236, 78, 78);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   RODAPÉ DO CARD
+========================================================= */
+
+.cliente-rodape {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 12px;
+}
+
+.cliente-rodape span {
+    color: #999999;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   BOTÃO DETALHES
+========================================================= */
+
+.btn-detalhes {
+    padding: 6px 10px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 5px;
+
+    background-color: #ffffff;
+
+    color: #333333;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.btn-detalhes:hover {
+    background-color: #fafafa;
+
+    border-color: rgb(236, 78, 78);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .sidebar {
+        width: 200px;
+        min-width: 200px;
+    }
+
+    .content {
+        padding: 28px 25px;
+    }
+
+    .clientes-grid {
+        gap: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+
+        min-height: auto;
+
+        padding: 20px 15px;
+    }
+
+    .sidebar-logo {
+        margin-bottom: 25px;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 8px;
+    }
+
+    .sidebar nav ul li {
+        margin-bottom: 0;
+    }
+
+    .sidebar nav ul li a {
+        padding: 8px 12px;
+    }
+
+    .content {
+        width: 100%;
+
+        padding: 25px 15px;
+    }
+
+    .cabecalho {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .cabecalho h1 {
+        font-size: 24px;
+    }
+
+    .btn-adicionar-cliente {
+        width: 100%;
+    }
+
+    .clientes-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .sidebar nav ul {
+        flex-direction: column;
+    }
+
+    .sidebar nav ul li,
+    .sidebar nav ul li a {
+        width: 100%;
+    }
+
+    .sidebar nav ul li a {
+        justify-content: flex-start;
+    }
+
+    .content {
+        padding: 20px 12px;
+    }
+
+    .cliente-info h2 {
+        font-size: 13px;
+    }
+
+}
+
+
+
+
+.cliente-acoes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-excluir-cliente {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border: 1px solid #f3c2c2;
+    border-radius: 8px;
+    background: #fff;
+    color: #dc3545;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-excluir-cliente:hover {
+    background: #dc3545;
+    color: #fff;
+}
+
+.btn-excluir-cliente:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-excluir-cliente i {
+    font-size: 16px;
+}
